@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Name>CreateInteriorElevationsGoal1</Name>
+    <FullClassName>LM2.Revit.InteriorElevationsGoal1</FullClassName>
+    <Text>Create Interior Elevations</Text>
+    <Description>Creates Interior Elevation Markers and associated views for each room in your project.</Description>
+    <VisibilityMode>NotVisibleWhenNoActiveDocument</VisibilityMode>
+    <Assembly>InteriorElevationsGoal1.dll</Assembly>
+    <AddInId>FF01F24E-8892-4802-A9D0-2D2C1191463E</AddInId>
+    <VendorId>me.lm2.revit</VendorId>
+    <VendorDescription>Lisa-Marie Mueller lm2.me</VendorDescription>
+  </AddIn>
+</RevitAddIns>
