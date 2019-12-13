@@ -7,8 +7,8 @@
     <ProjectGuid>{CADBB257-1EC7-4666-9B64-C13228CEEBE9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>InteriorElevationsGoal2</RootNamespace>
-    <AssemblyName>InteriorElevationsGoal2</AssemblyName>
+    <RootNamespace>InteriorElevationsGoal3</RootNamespace>
+    <AssemblyName>InteriorElevationsGoal3</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

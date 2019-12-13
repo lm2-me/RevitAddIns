@@ -12,7 +12,7 @@ using System.Windows.Media.Imaging;
 namespace LM2.Revit
 {
     [Transaction(TransactionMode.Manual)]
-    public class InteriorElevationsGoal2Ribbon : IExternalApplication
+    public class InteriorElevationsGoal3Ribbon : IExternalApplication
     {
         public Result OnShutdown(UIControlledApplication application)
         {

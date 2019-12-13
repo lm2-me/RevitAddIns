@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <RevitAddIns>
   <AddIn Type="Application">
-    <Name>CreateInteriorElevationsGoal2Ribbon</Name>
-    <FullClassName>LM2.Revit.InteriorElevationsGoal2Ribbon</FullClassName>
+    <Name>CreateInteriorElevationsGoal3Ribbon</Name>
+    <FullClassName>LM2.Revit.InteriorElevationsGoal3Ribbon</FullClassName>
     <Text>Creates Ribbon</Text>
     <Description>Creates Ribbon and Buttons</Description>
     <VisibilityMode>NotVisibleWhenNoActiveDocument</VisibilityMode>
-    <Assembly>InteriorElevationsGoal2.dll</Assembly>
-    <AddInId>FF01F24E-8892-4802-A9D0-2D2C1191464F</AddInId>
+    <Assembly>InteriorElevationsGoal3.dll</Assembly>
+    <AddInId>FF01F24E-8892-4802-A9D0-2D2C1191465F</AddInId>
     <VendorId>me.lm2.revit</VendorId>
     <VendorDescription>Lisa-Marie Mueller lm2.me</VendorDescription>
   </AddIn>

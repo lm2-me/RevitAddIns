@@ -28,7 +28,7 @@ using System.Linq;
 namespace LM2.Revit
 {
     [Transaction(TransactionMode.Manual)]
-    public class InteriorElevationsGoal2 : IExternalCommand
+    public class InteriorElevationsGoal3 : IExternalCommand
     {
         private static Func<Curve, string> serializeCurve = c => "[" + c.GetEndPoint(0) + "," + c.GetEndPoint(1) + "]";
         private static Func<IEnumerable<Curve>, string> serializeCurves = cs => String.Join(",", cs.Select(serializeCurve));
