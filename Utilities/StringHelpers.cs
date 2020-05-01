@@ -41,7 +41,7 @@ namespace LM2.Revit
                    offsetAngle >=  45 && offsetAngle < 135 ? "NORTH" :
                    offsetAngle >= 135 && offsetAngle < 225 ? "WEST" :
                    offsetAngle >= 225 && offsetAngle < 315 ? "SOUTH" :
-                   offsetAngle >= 315 && offsetAngle < 360 ? "EAST" :
+                   offsetAngle >= 315 && offsetAngle <= 360 ? "EAST" :
                    "";
         }
     }

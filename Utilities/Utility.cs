@@ -73,6 +73,7 @@ namespace LM2.Revit
                 return center;
             }
 
+
             center = new XYZ(avgX - 1, avgY, avgZ);
 
             if (room.IsPointInRoom(center))
@@ -140,6 +141,20 @@ namespace LM2.Revit
         public double Degrees2Radians(double degrees)
         {
             return degrees * (Math.PI / 180);
+        }
+
+        public static void ReorderMinMax(XYZ min, XYZ max, out XYZ newMin, out XYZ newMax)
+        {
+            double newMinX = min.X < max.X ? min.X : max.X;
+            double newMinY = min.Y < max.Y ? min.Y : max.Y;
+            double newMinZ = min.Z < max.Z ? min.Z : max.Z;
+
+            double newMaxX = min.X > max.X ? min.X : max.X;
+            double newMaxY = min.Y > max.Y ? min.Y : max.Y;
+            double newMaxZ = min.Z > max.Z ? min.Z : max.Z;
+
+            newMin = new XYZ(newMinX, newMinY, newMinZ);
+            newMax = new XYZ(newMaxX, newMaxY, newMaxZ);
         }
     }
 }

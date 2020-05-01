@@ -1,0 +1,64 @@
+﻿<Window x:Class="LM2.Revit.CreateExteriorElevationInput1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LM2.Revit"
+             mc:Ignorable="d" Height="201.256" Width="726.541" MinWidth="400" MinHeight="250">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Border BorderBrush="#FFDF94" BorderThickness="0, 0, 7, 0" />
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+
+            </Grid.RowDefinitions>
+            <StackPanel Margin="9,9,9,9">
+
+                <Label Content="Create Exterior Elevation Views by Walls" Margin="30,9,0,0" />
+                <Label Content="lm2.me" Margin="30,3,0,0" />
+                <TextBlock TextWrapping="WrapWithOverflow" Margin="30,3,0,0" Padding="4">
+                    Please make sure you have the view open in which you want to select your walls. 
+                    You will not be able to navigate to a different view. When you are ready to select
+                    your walls please press the "Select Walls" button below. When you are done, please 
+                    press the "finish" button at the bottom of the ribbon.
+                </TextBlock>
+
+                <Button x:Name="SelectWallsButton" Grid.Column="1"  Content="Select Walls" Margin="0,9,9,9" VerticalAlignment="Top" Width="150" Background="#FFDF94" BorderThickness="0" Click="SelectWalls_Button_Click" IsEnabled="{Binding WallSelectionButtonActive}"/>
+
+            </StackPanel>
+
+            <Grid HorizontalAlignment="Stretch" Grid.Row="1" >
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="CancelButton"
+                        Grid.Column="1"
+                        Content="Cancel"
+                        Margin="0,9,9,9" 
+                        VerticalAlignment="Top"
+                        Width="75"
+                        Background="#FFDF94"
+                        BorderThickness="0"
+                        Click="Cancel_Button_Click"/>
+                <Button x:Name="AcceptButton"
+                        Grid.Column="2"
+                        Content="Accept"
+                        Margin="0,9,18,9"
+                        VerticalAlignment="Bottom"
+                        Width="75"
+                        Background="#FFDF94"
+                        BorderThickness="0"
+                        Opacity="0.5"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

@@ -20,11 +20,20 @@ using Autodesk.Revit.DB;
 using System;
 using System.Linq;
 
-
+//set up docstrings for all methods
 namespace LM2.Revit
 {
+    /// <summary>
+    /// Methods used for Matrix operations.
+    /// </summary>
     public class Matrix
     {
+        /// <summary>
+        /// Prints matrices with attached debug messages
+        /// </summary>
+        /// <param name="msg">String to print</param>
+        /// <param name="m">Matrix to Print</param>
+        /// <param name="Debug"></param>
         public static void print(string msg, double[][] m, Action<string> Debug)
         {
             Debug(msg + ": [" + String.Join(
@@ -35,6 +44,53 @@ namespace LM2.Revit
             ) + "]");
         }
 
+        /// <summary>
+        /// Matrix for rotation around the X Axis.
+        /// </summary>
+        /// <param name="t">angle to rotate by in radians</param>
+        /// <returns></returns>
+        public static double[][] XAxisRotation(double t)
+        {
+            return new [] {
+                new[] { 1.0, 0.0, 0.0 },
+                new[] { 0.0, Math.Cos(t), - Math.Sin(t) },
+                new[] { 0.0, Math.Sin(t), Math.Cos(t) }
+             };
+        }
+
+        /// <summary>
+        /// Matrix for rotation around the Y Axis.
+        /// </summary>
+        /// <param name="t">angle to rotate by in radians</param>
+        /// <returns></returns>
+        public static double[][] YAxisRotation(double t)
+        {
+            return new[] {
+                new[] { Math.Cos(t), 0.0, Math.Sin(t) },
+                new[] { 0.0, 1.0, 0.0 },
+                new[] { -Math.Sin(t), 0.0, Math.Cos(t) }
+             };
+        }
+
+        /// <summary>
+        /// Matrix for rotation around the Z Axis. Assumes positive rotation is counterclockwise.
+        /// </summary>
+        /// <param name="t">angle to rotate by in radians</param>
+        /// <returns></returns>
+        public static double[][] ZAxisRotation(double t)
+        {
+            return new[] {
+                new[] { Math.Cos(t), -Math.Sin(t), 0.0 },
+                new[] { Math.Sin(t), Math.Cos(t), 0.0 },
+                new[] { 0.0, 0.0, 1.0 }
+             };
+        }
+
+        /// <summary>
+        /// This method gets the minors for the matrix. This is an intermediary step to finding the inverse of a matrix.
+        /// </summary>
+        /// <param name="m"> The matrix you would like get the minors for.</param>
+        /// <returns></returns>
         public static double[][] getMinors(double[][] m)
         {
             return new[] {
@@ -90,6 +146,11 @@ namespace LM2.Revit
             return scale(ajugate, 1 / det);
         }
 
+        /// <summary>
+        /// Returns a matrix of the Revit transform value.
+        /// </summary>
+        /// <param name="t">Revit transform value</param>
+        /// <returns></returns>
         public static double[][] transform2matrix(Transform t)
         {
             return new []
@@ -100,6 +161,11 @@ namespace LM2.Revit
             };
         }
 
+        /// <summary>
+        /// Converts an XYZ coordinate to a matrix
+        /// </summary>
+        /// <param name="p">XYZ coordinate to return as matrix</param>
+        /// <returns></returns>
         public static double[] xyz2matrix(XYZ p)
         {
             return new[]
@@ -110,11 +176,22 @@ namespace LM2.Revit
             };
         }
 
+        /// <summary>
+        /// Converts a matrix into an XYZ coordinate
+        /// </summary>
+        /// <param name="p">The matrix to return as XYZ coordinate</param>
+        /// <returns></returns>
         public static XYZ matrix2xyz(double[] p)
         {
             return new XYZ(p[0], p[1], p[2]);
         }
 
+        /// <summary>
+        /// Finds the dot prodcut of two matrices
+        /// </summary>
+        /// <param name="m1">The first matrix for the dot product</param>
+        /// <param name="m2T">The second matrix for the dot product</param>
+        /// <returns></returns>
         public static double[] dot(double[][] m1, double[] m2T)
         {
             return new[]
