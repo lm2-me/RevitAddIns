@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>RenameElevationsRibbon</Name>
+    <FullClassName>LM2.Revit.RenameElevationsRibbon</FullClassName>
+    <Text>Creates Ribbon</Text>
+    <Description>Creates Ribbon and Buttons</Description>
+    <VisibilityMode>NotVisibleWhenNoActiveDocument</VisibilityMode>
+    <Assembly>RenameElevations1.dll</Assembly>
+    <AddInId>29434801-578E-4C66-A537-A37CCD8E8BA4</AddInId>
+    <VendorId>me.lm2.revit</VendorId>
+    <VendorDescription>Lisa-Marie Mueller lm2.me</VendorDescription>
+  </AddIn>
+</RevitAddIns>
