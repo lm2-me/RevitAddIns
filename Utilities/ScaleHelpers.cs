@@ -8,6 +8,9 @@ namespace LM2.Revit
 {
     public static class ScaleHelpers
     {
+        /// <summary>
+        /// List of Revit scales and their integer value for use in methods that have a scale parameter
+        /// </summary>
         public static readonly List<KeyValuePair<string, int>> ScaleList = new List<KeyValuePair<string, int>>()
         {
             new KeyValuePair<string, int>( "12\" = 1'-0\"", 1 ),

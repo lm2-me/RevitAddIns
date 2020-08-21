@@ -23,6 +23,12 @@ namespace LM2.Revit
 {
     public class StringHelpers
     {
+        /// <summary>
+        /// takes in angle as degrees and outputs the cardinal direction: north is up, east is right, south is down, west is left
+        /// </summary>
+        /// <param name="doc">UI document</param>
+        /// <param name="viewAngle">angle in degrees</param>
+        /// <returns>cardinal direction: north, south, west, or east</returns>
         public static string Angle2Cardinal(Document doc, double viewAngle)
         {
             double northOffset = Utility.GetDocNorthOffset(doc);

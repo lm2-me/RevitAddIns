@@ -48,7 +48,7 @@ namespace LM2.Revit
         /// Matrix for rotation around the X Axis.
         /// </summary>
         /// <param name="t">angle to rotate by in radians</param>
-        /// <returns></returns>
+        /// <returns>rotation matrix</returns>
         public static double[][] XAxisRotation(double t)
         {
             return new [] {
@@ -62,7 +62,7 @@ namespace LM2.Revit
         /// Matrix for rotation around the Y Axis.
         /// </summary>
         /// <param name="t">angle to rotate by in radians</param>
-        /// <returns></returns>
+        /// <returns>rotation matrix</returns>
         public static double[][] YAxisRotation(double t)
         {
             return new[] {
@@ -76,7 +76,7 @@ namespace LM2.Revit
         /// Matrix for rotation around the Z Axis. Assumes positive rotation is counterclockwise.
         /// </summary>
         /// <param name="t">angle to rotate by in radians</param>
-        /// <returns></returns>
+        /// <returns>rotation matrix</returns>
         public static double[][] ZAxisRotation(double t)
         {
             return new[] {
@@ -87,10 +87,10 @@ namespace LM2.Revit
         }
 
         /// <summary>
-        /// This method gets the minors for the matrix. This is an intermediary step to finding the inverse of a matrix.
+        /// Gets the minors for the matrix. This is an intermediary step to finding the inverse of a matrix.
         /// </summary>
-        /// <param name="m"> The matrix you would like get the minors for.</param>
-        /// <returns></returns>
+        /// <param name="m"> The matrix to get the minors for</param>
+        /// <returns>array of minors</returns>
         public static double[][] getMinors(double[][] m)
         {
             return new[] {
@@ -100,6 +100,11 @@ namespace LM2.Revit
              };
         }
 
+        /// <summary>
+        /// Gets cofactors for the matrix. This is an intermediary step to finding the inverse of a matrix.
+        /// </summary>
+        /// <param name="m">The matrix to get the cofactors for</param>
+        /// <returns>array of cofactors</returns>
         public static double[][] getCofactors(double[][] m)
         {
             return new[] {
@@ -109,6 +114,11 @@ namespace LM2.Revit
             };
         }
 
+        /// <summary>
+        /// Gets adjugates for the matrix. This is an intermediary step to finding the inverse of a matrix.
+        /// </summary>
+        /// <param name="m">The matrix to get the adjugates for</param>
+        /// <returns>array of adjugates</returns>
         public static double[][] getAdjugate(double[][] m)
         {
             return new[] {
@@ -118,11 +128,23 @@ namespace LM2.Revit
             };
         }
 
+        /// <summary>
+        /// Gets the determinants for the matrix. This is an intermediary step to finding the inverse of a matrix.
+        /// </summary>
+        /// <param name="m"></param>
+        /// <param name="c"></param>
+        /// <returns></returns>
         public static double getDeterminant(double[][] m, double[][] c)
         {
             return m[0][0] * c[0][0] + m[0][1] * c[0][1] + m[0][2] * c[0][2];
         }
 
+        /// <summary>
+        /// scales a matrix
+        /// </summary>
+        /// <param name="m">matrix to scale</param>
+        /// <param name="s">scale factor</param>
+        /// <returns>scaled matrix</returns>
         public static double[][] scale(double[][] m, double s)
         {
             return new[] {
@@ -132,7 +154,11 @@ namespace LM2.Revit
             };
         }
 
-
+        /// <summary>
+        /// Inverts a matrix
+        /// </summary>
+        /// <param name="m">matrix to invert</param>
+        /// <returns>inverted matrix</returns>
         public static double[][] invert(double[][] m)
         {
             var minors = getMinors(m);
@@ -147,10 +173,10 @@ namespace LM2.Revit
         }
 
         /// <summary>
-        /// Returns a matrix of the Revit transform value.
+        /// Creates a matrix of the Revit transform value.
         /// </summary>
         /// <param name="t">Revit transform value</param>
-        /// <returns></returns>
+        /// <returns>Revit transform as matrix</returns>
         public static double[][] transform2matrix(Transform t)
         {
             return new []
@@ -165,7 +191,7 @@ namespace LM2.Revit
         /// Converts an XYZ coordinate to a matrix
         /// </summary>
         /// <param name="p">XYZ coordinate to return as matrix</param>
-        /// <returns></returns>
+        /// <returns>matrix of XYZ coordinate</returns>
         public static double[] xyz2matrix(XYZ p)
         {
             return new[]
@@ -180,7 +206,7 @@ namespace LM2.Revit
         /// Converts a matrix into an XYZ coordinate
         /// </summary>
         /// <param name="p">The matrix to return as XYZ coordinate</param>
-        /// <returns></returns>
+        /// <returns>XYZ coordinate of matrix</returns>
         public static XYZ matrix2xyz(double[] p)
         {
             return new XYZ(p[0], p[1], p[2]);
@@ -191,7 +217,7 @@ namespace LM2.Revit
         /// </summary>
         /// <param name="m1">The first matrix for the dot product</param>
         /// <param name="m2T">The second matrix for the dot product</param>
-        /// <returns></returns>
+        /// <returns>the dot product</returns>
         public static double[] dot(double[][] m1, double[] m2T)
         {
             return new[]
