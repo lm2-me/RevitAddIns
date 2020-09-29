@@ -1,0 +1,122 @@
+﻿<Window x:Class="LM2.Revit.DialogPlaceIntElevations"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LM2.Revit"
+             mc:Ignorable="d" MinWidth="600" MinHeight="450"
+             Icon="C:/ProgramData/Autodesk/Revit/Addins/2019/lm2_favicon.png" Height="450" Width="700">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Border BorderBrush="#FFDF94" BorderThickness="0, 0, 7, 0" />
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+
+            </Grid.RowDefinitions>
+            <StackPanel Margin="9,9,9,9">
+
+                <Label Content="Place Interior Elevations" Margin="30,9,0,0" FontWeight="Bold" FontSize="16" />
+
+                <TextBlock>
+                <Hyperlink NavigateUri="https://lm2.me/" TextDecorations="None">
+                    <TextBlock Text="lm2.me" Margin="33,0" FontWeight="Bold" FontSize="14"/>
+                </Hyperlink>
+                </TextBlock>
+
+                <TextBlock TextWrapping="WrapWithOverflow" Margin="30,3,0,0" Padding="4">
+                    Please make selections for the following inputs, then select "Accept" to 
+                    proceed with creating elevations for all placed rooms in the project. 
+                    Depending on the number of reooms, it may take a minute so please be patient.
+                </TextBlock>
+
+                <TextBlock TextWrapping="WrapWithOverflow" Margin="30,3,0,0" Padding="4">
+                  For the interior elevations please select:
+                </TextBlock>
+
+                <Grid HorizontalAlignment="Stretch" Grid.Row="3" >
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="2*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30" />
+                    </Grid.RowDefinitions>
+
+                    <Label Grid.Column="0" Grid.Row="0" Content="Select ViewFamily type" Margin="30,3,0,0" />
+                    <Label Grid.Column="0" Grid.Row="1" Content="Select View Scale" Margin="30,3,0,0" />
+                    <Label Grid.Column="0" Grid.Row="2" Content="Select ViewTemplate" Margin="30,3,0,0" />
+
+                    <ComboBox x:Name="viewFamilyTypeBox" Grid.Column="1" Grid.Row="0" Margin="30,3,0,0" />
+                    <ComboBox x:Name="scaleTypeBox" Grid.Column="1" Grid.Row="1" Margin="30,3,0,0" />
+                    <ComboBox x:Name="viewTemplateTypeBox" Grid.Column="1" Grid.Row="2" Margin="30,3,0,0" />
+                </Grid>
+
+                <TextBlock TextWrapping="WrapWithOverflow" Margin="30,3,0,0" Padding="4">
+                  For the masking regions please select:
+                </TextBlock>
+
+                <Grid HorizontalAlignment="Stretch" Grid.Row="2" >
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="2*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                    </Grid.RowDefinitions>
+
+                    <Label Grid.Column="0" Grid.Row="0" Content="Select FilledRegion type" Margin="30,3,0,0" />
+                    <Label Grid.Column="0" Grid.Row="1" Content="Select LineStyle" Margin="30,3,0,0" />
+
+                    <ComboBox x:Name="filledRegionTypeBox" Grid.Column="1" Grid.Row="0" Margin="30,3,0,0" />
+                    <ComboBox x:Name="lineStyleTypeBox" Grid.Column="1" Grid.Row="1" Margin="30,3,0,0" />
+
+                </Grid>
+
+            </StackPanel>
+
+            <Grid HorizontalAlignment="Stretch" Grid.Row="1" >
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <!--<TextBlock Grid.Column="0" TextWrapping="WrapWithOverflow" Margin="30,9,9,9">
+                    By using this plug-in you agree to have background data and usage sent to the developer. No personal data or information is collected.
+                </TextBlock>-->
+
+                <Button x:Name="CancelButton"
+                        Grid.Column="1"
+                        Content="Cancel"
+                        Margin="0,9,9,9" 
+                        VerticalAlignment="Top"
+                        Width="75"
+                        Background="#FFDF94"
+                        BorderThickness="0"
+                        Click="Cancel_Button_Click"/>
+                <Button x:Name="AcceptButton"
+                        FontWeight="Bold"
+                        Grid.Column="2"
+                        Content="Accept"
+                        Margin="0,9,18,9"
+                        VerticalAlignment="Bottom"
+                        Width="75"
+                        Background="#FFDF94"
+                        BorderThickness="0" Click="AcceptButton_Click"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

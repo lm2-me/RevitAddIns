@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>CreateInteriorElevations</Name>
+    <FullClassName>LM2.Revit.InteriorElevations</FullClassName>
+    <Text>Creates Ribbon</Text>
+    <Description>Creates Ribbon and Buttons</Description>
+    <VisibilityMode>NotVisibleWhenNoActiveDocument</VisibilityMode>
+    <Assembly>InteriorElevations.dll</Assembly>
+    <AddInId>B3CE55F1-E45B-4657-BE45-11FD83D0D601</AddInId>
+    <VendorId>me.lm2.revit</VendorId>
+    <VendorDescription>Lisa-Marie Mueller lm2.me</VendorDescription>
+  </AddIn>
+</RevitAddIns>

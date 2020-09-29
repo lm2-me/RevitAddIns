@@ -208,6 +208,11 @@ namespace LM2.Revit
             return result.Content.ReadAsStringAsync().Result;
         }
 
+        public static void SendTelemetryData(Document doc, object telemetryURL, object pluginName, string slackMessage2)
+        {
+            throw new NotImplementedException();
+        }
+
         /// <summary>
         /// Reads the config file to find the URL to send the telemetry data to.
         /// </summary>
