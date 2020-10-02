@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>TextFormatting</Name>
+    <FullClassName>LM2.Revit.TextFormattingRibbon</FullClassName>
+    <Text>Creates Ribbon</Text>
+    <Description>Creates Ribbon and Buttons</Description>
+    <VisibilityMode>NotVisibleWhenNoActiveDocument</VisibilityMode>
+    <Assembly>TextFormatting.dll</Assembly>
+    <AddInId>30BEC2C5-EA3A-440A-BC5C-E109E369189B</AddInId>
+    <VendorId>me.lm2.revit</VendorId>
+    <VendorDescription>Lisa-Marie Mueller lm2.me</VendorDescription>
+  </AddIn>
+</RevitAddIns> 
