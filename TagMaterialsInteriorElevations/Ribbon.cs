@@ -1,4 +1,4 @@
-﻿using Autodesk.Revit.Attributes;
+﻿ using Autodesk.Revit.Attributes;
 using Autodesk.Revit.UI;
 using System;
 using System.Collections.Generic;
@@ -54,7 +54,7 @@ namespace LM2.Revit
             PushButton renameIntElevButton = materialPanel.AddItem(materialTagIntElevButtonData) as PushButton;
 
             renameIntElevButton.ToolTip = "Tags materials in an interior elevation view";
-            var imgUri = assemblyDir + @"\02-RenameIntElev_16x16.png";
+            var imgUri = assemblyDir + @"\TagMaterials_16x16.png";
             System.Diagnostics.Debug.WriteLine(imgUri);
             renameIntElevButton.LargeImage = new BitmapImage(new Uri(imgUri, UriKind.Absolute));
         }
